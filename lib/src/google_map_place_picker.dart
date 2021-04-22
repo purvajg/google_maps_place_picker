@@ -159,17 +159,18 @@ class GoogleMapPlacePicker extends StatelessWidget {
             initialCameraPosition: initialCameraPosition,
             mapType: data,
             myLocationEnabled: true,
-            onMapCreated: (GoogleMapController controller) {
-              provider.mapController = controller;
-              provider.setCameraPosition(null);
-              provider.pinState = PinState.Idle;
-
-              // When select initialPosition set to true.
-              if (selectInitialPosition!) {
-                provider.setCameraPosition(initialCameraPosition);
-                _searchByCameraLocation(provider);
-              }
-            },
+            onMapCreated: onMapCreated,
+//                (GoogleMapController controller) {
+//              provider.mapController = controller;
+//              provider.setCameraPosition(null);
+//              provider.pinState = PinState.Idle;
+//
+//              // When select initialPosition set to true.
+//              if (selectInitialPosition!) {
+//                provider.setCameraPosition(initialCameraPosition);
+//                _searchByCameraLocation(provider);
+//              }
+//            },
             onCameraIdle: () {
               if (provider.isAutoCompleteSearching) {
                 provider.isAutoCompleteSearching = false;
