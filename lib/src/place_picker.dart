@@ -61,6 +61,8 @@ class PlacePicker extends StatefulWidget {
     this.automaticallyImplyAppBarLeading = true,
     this.autocompleteOnTrailingWhitespace = false,
     this.hidePlaceDetailsWhenDraggingPin = true,
+    this.circles,
+    this.markers,
   }) : super(key: key);
 
   final String apiKey;
@@ -96,6 +98,8 @@ class PlacePicker extends StatefulWidget {
   final List<Component>? autocompleteComponents;
   final bool? strictbounds;
   final String? region;
+  final Set<Marker>? markers;
+  final Set<Circle>? circles;
 
   /// If true the [body] and the scaffold's floating widgets should size
   /// themselves to avoid the onscreen keyboard whose height is defined by the
@@ -390,6 +394,8 @@ class _PlacePickerState extends State<PlacePicker> {
 
   Widget _buildMap(LatLng initialTarget) {
     return GoogleMapPlacePicker(
+      markers: ,
+      circles: ,
       initialTarget: initialTarget,
       appBarKey: appBarKey,
       selectedPlaceWidgetBuilder: widget.selectedPlaceWidgetBuilder,

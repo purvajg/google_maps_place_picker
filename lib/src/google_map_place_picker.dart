@@ -50,6 +50,8 @@ class GoogleMapPlacePicker extends StatelessWidget {
     this.language,
     this.forceSearchOnZoomChanged,
     this.hidePlaceDetailsWhenDraggingPin,
+    this.markers,
+    this.circles,
   }) : super(key: key);
 
   final LatLng initialTarget;
@@ -78,6 +80,8 @@ class GoogleMapPlacePicker extends StatelessWidget {
 
   final bool? forceSearchOnZoomChanged;
   final bool? hidePlaceDetailsWhenDraggingPin;
+  final Set<Marker>? markers;
+  final Set<Circle>? circles;
 
   _searchByCameraLocation(PlaceProvider provider) async {
     // We don't want to search location again if camera location is changed by zooming in/out.
@@ -147,6 +151,8 @@ class GoogleMapPlacePicker extends StatelessWidget {
           CameraPosition initialCameraPosition = CameraPosition(target: initialTarget, zoom: 15);
 
           return GoogleMap(
+            markers: markers!,
+            circles: circles!,
             myLocationButtonEnabled: false,
             compassEnabled: false,
             mapToolbarEnabled: false,
