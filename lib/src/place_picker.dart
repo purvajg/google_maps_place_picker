@@ -394,8 +394,8 @@ class _PlacePickerState extends State<PlacePicker> {
 
   Widget _buildMap(LatLng initialTarget) {
     return GoogleMapPlacePicker(
-      markers: ,
-      circles: ,
+      markers: widget.markers,
+      circles: widget.circles,
       initialTarget: initialTarget,
       appBarKey: appBarKey,
       selectedPlaceWidgetBuilder: widget.selectedPlaceWidgetBuilder,
